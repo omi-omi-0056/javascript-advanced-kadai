@@ -89,15 +89,15 @@ const rankCheck = score => {
 // ゲーム終了
 const gameOver = id => {
   clearInterval(id);
-  setTimeout(() =>{
-  // typedfield.style.display = 'none';   ←いらないので消した
+  typedfield.style.display = 'none';
   untypedfield.textContent = 'タイムアップ';
-  },10);
+  setTimeout(() =>{
   const result = confirm(rankCheck(score));
   // OKボタンをクリックしたらロードする
   if(result == true){
     window.location.reload();
   }
+},10);
 };
 
 // カウントダウンタイマー
